@@ -1,0 +1,45 @@
+<div class="card">
+  <div class="card-header">
+    <h4 class="card-title">Tareas</h4>
+  </div>
+
+  <div class="card-body">
+    <div class="form-group">
+      <label for="tarea">Añade una tarea</label>
+      <input type="text" class="form-control" name="tarea" id="tarea" placeholder="" [(ngModel)]="sTarea">
+    </div>
+    <button type="button" class="btn btn-secondary" (click)="addTarea()">Añadir</button>
+  </div>
+
+  <div class="card-footer text-muted">
+   <!-- ESPECÍFICO DE ANGULAR 4: 
+     <div *ngIf="aTareas.length; then ideasTemplate else vacioTemplate"></div>
+      
+      <ng-template #ideasTemplate>
+        <h4>Lista de tareas</h4>
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let tarea of aTareas">{{tarea}}</li>
+        </ul>
+      </ng-template>
+
+    <ng-template #vacioTemplate>
+      <p>Animate a añadir tu primera tarea</p>
+    </ng-template> -->
+
+    <div *ngIf="aTareas.length; else vacioTemplate">
+      <h4>Lista de tareas</h4>
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let tarea of aTareas; let i = index">{{tarea}} ({{i+1}})
+
+            <i class="fa fa-trash puntero" title="Eliminar" (click)="deleteTarea(i)"></i>
+            <!-- <button type="button" class="btn btn-danger" (click)="deleteTarea(i)">Eliminar</button> -->
+          </li>
+        </ul>
+    </div>
+      
+    <ng-template #vacioTemplate>
+      <p>Anímate a añadir tu primera tarea</p>
+    </ng-template> 
+
+  </div>
+</div>
