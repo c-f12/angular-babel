@@ -18,10 +18,10 @@ export class LibrosGoogleComponent implements OnInit {
     this.urlBase = 'https://www.googleapis.com/books/v1/volumes?q=intitle:';
   }
 
-  buscar() {
+ /*  buscar() {
     this.aLibros = []; // <-- Con cada búsqueda vaciamos el array.
     const url = this.urlBase + this.clave;
-    this.http.get(url).toPromise()  // <-- En lugar de devolverme un observable q me devuelva una promesa
+    this.http.get(url).toPromise() // <-- En lugar de devolverme un observable q me devuelva una promesa
     .then((response: any) => {
       console.log(response);
       response.items.forEach(element => {
@@ -29,6 +29,21 @@ export class LibrosGoogleComponent implements OnInit {
       });
     })
     .catch((error) => console.log(error));
+
+    this.clave = '';
+  } */
+
+
+  buscar() {
+    this.aLibros = []; // <-- Con cada búsqueda vaciamos el array.
+    const url = this.urlBase + this.clave;
+    this.http.get(url).subscribe(
+    (response: any) => {
+      console.log(response);
+      response.items.forEach(element => {
+        this.aLibros.push(element.volumeInfo.title);
+      });
+    });
 
     this.clave = '';
   }

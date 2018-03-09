@@ -8,6 +8,8 @@ import { LibrosMockComponent } from './libros-mock/libros-mock.component';
 import { FormsModule } from '@angular/forms';
 import { LibrosGoogleComponent } from './libros-google/libros-google.component';
 import { HttpClientModule } from '@angular/common/http';
+import { LibrosByServicioComponent } from './libros-by-servicio/libros-by-servicio.component';
+import { GbooksService } from '../servicios/gbooks.service';
  /* Importamos el módulo donde esta contenido el servicio, este módulo es el q hace la inyeccion */
 
 @NgModule({
@@ -20,13 +22,15 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     LibrosComponent,
     LibrosMockComponent,
-    LibrosGoogleComponent
+    LibrosGoogleComponent,
+    LibrosByServicioComponent
   ],
   exports: [
     LibrosComponent
   ],
   providers: [
-    BooksService
+    BooksService,
+    GbooksService
   ]
 })
 export class LibrosModule { }
