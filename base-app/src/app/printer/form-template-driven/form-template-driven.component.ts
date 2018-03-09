@@ -15,6 +15,7 @@ export class FormTemplateDrivenComponent implements OnInit {
 
   // Decorador para ver las propiedades del form -> devuelve un ElementRef
   @ViewChild('formPrinter') formulario: any;
+  @ViewChild('nameState') nameState: any;
 
   constructor() { }
 
@@ -30,10 +31,12 @@ export class FormTemplateDrivenComponent implements OnInit {
     };
 
     console.dir(this.formulario);
+    console.dir(this.nameState);
   }
 
   enviar() {
     console.log('Datos enviados');
+    console.dir(this.nameState);
   }
 
   borrar() {
