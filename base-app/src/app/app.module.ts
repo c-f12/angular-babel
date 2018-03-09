@@ -7,11 +7,13 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { InicioModule } from './inicio/inicio.module';
 import { AcercadeModule } from './acercade/acercade.module';
+import { TruncarPipe } from './pipes/truncar.pipe';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TruncarPipe
   ],
   imports: [
     BrowserModule,
