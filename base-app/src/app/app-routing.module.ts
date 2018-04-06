@@ -11,6 +11,7 @@ const routes: Routes = [
   { path: 'agenda', loadChildren: './agenda/agenda.module#AgendaModule' },
   { path: 'libros', loadChildren: './libros/libros.module#LibrosModule' },
   { path: 'printer', loadChildren: './printer/printer.module#PrinterModule' },
+  { path: 'contactos', loadChildren: './contactos/contactos.module#ContactosModule' },
   {path: '', pathMatch: 'full', redirectTo: 'inicio'} // para que por defecto cargue inicio
 ];
 

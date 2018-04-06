@@ -1,0 +1,9 @@
+{
+  "posts": [
+    { "id": 1, "title": "json-server", "author": "typicode" }
+  ],
+  "contactos": [
+    { "id": 1, "nombre": "Pepe", "apellido": "Pérez", "telefono": 656747383, "email": "pperez@babel.es" },
+    { "id": 2, "nombre": "Luis", "apellido": "López",  "telefono": 656747343, "email": "llopez@babel.es" }
+  ]
+}
