@@ -8,6 +8,9 @@ import { Component, OnInit } from '@angular/core';
         <div class="col-6">
           <bbl-form></bbl-form>
         </div>
+        <div class="col-6">
+          <bbl-form-model></bbl-form-model>
+        </div>
       </div>
     </div>
   `,
